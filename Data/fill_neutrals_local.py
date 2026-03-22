@@ -193,9 +193,7 @@ if __name__ == "__main__":
     # KIỂM TRA bitsandbytes
     try:
         import bitsandbytes
-        print(f"✓ bitsandbytes {bitsandbytes.__version__} sẵn sàng")
     except ImportError:
-        print("✗ Thiếu bitsandbytes! Chạy lệnh sau rồi thử lại:")
         print("  pip install bitsandbytes")
         exit(1)
 
@@ -290,16 +288,13 @@ if __name__ == "__main__":
         
         # Preview first batch for verification
         if batch_num == 0:
-            print("=" * 60)
             print("FIRST BATCH SAMPLE (verify logic):")
-            print("=" * 60)
             for j in range(min(2, len(batch))):
                 print(f"Item {j}:")
                 print(f"  Toxic: {batch[j]['toxic'][:60]}...")
                 print(f"  N1: {'[FILL]' if not batch[j]['neutral1'] else batch[j]['neutral1'][:60]}")
                 print(f"  N2: {'[FILL]' if not batch[j]['neutral2'] else batch[j]['neutral2'][:60]}")
                 print(f"  N3: {'[FILL]' if not batch[j]['neutral3'] else batch[j]['neutral3'][:60]}")
-            print("=" * 60 + "\n")
 
         batch_start_time = time.time()
         results = run_batch(batch, llm, sampling_params)
@@ -320,7 +315,7 @@ if __name__ == "__main__":
                 try:
                     time.sleep(5)
                 except KeyboardInterrupt:
-                    print("\n\n⚠️  Stopped by user. Checkpoint saved, you can resume later.")
+                    print("\n\n   Stopped by user. Checkpoint saved, you can resume later.")
                     exit(0)
                 print("   Continuing...\n")
             
