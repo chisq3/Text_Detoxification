@@ -1,0 +1,14 @@
+DATASET CLEANING REPORT
+========================================
+Input: paradetox_filled.tsv
+Output: paradetox_clean.tsv
+
+Original rows: 11927
+Dropped rows: 3768 (31.59%)
+Clean rows: 8159 (68.41%)
+
+MISSING: 180
+DUPLICATE: 1631
+SHORT: 252
+LOW_DIVERSITY: 3090
+TOXIC_PRESERVED: 83

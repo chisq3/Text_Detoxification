@@ -1,0 +1,321 @@
+============================================================
+CLEANUP REPORT
+============================================================
+
+Total rows attempted: 180
+Successfully fixed:   179
+Failed:               1
+Success rate:         99.4%
+Time elapsed:         15.1 minutes
+
+============================================================
+FIXED ROWS:
+============================================================
+
+Row 1326:
+  Toxic: nan bread is a bitch to make how do you do it ?
+  N1: Nan bread is hard to make. How do you do it?
+  N2: Making nan bread is difficult. How do you manage it?
+  N3: Is nan bread challenging to make? How do you go about it?
+
+Row 1327:
+  Toxic: quite right payment is none of the governments damn business .
+  N1: quite right, payment should not be the government's concern.
+  N2: payment issues shouldn't involve the government at all.
+  N3: it's correct that payment matters are unrelated to the government.
+
+Row 1328:
+  Toxic: democrats are totally ignorant of economics .
+  N1: Democrats seem to lack knowledge in the field of Economics.
+  N2: It appears that Democrats have little understanding of Economics.
+  N3: The Democrats do not appear to have a good grasp on Economics.
+
+Row 1329:
+  Toxic: could idiotic selfrighteous people please refrain from editing or deleting my talk page in future .
+  N1: could people please refrain from editing or deleting my talk page in the future.
+  N2: please avoid editing or deleting my talk page in the future.
+  N3: i would appreciate it if people did not edit or delete my talk page in the future.
+
+Row 1330:
+  Toxic: is your shift over soon troll or does some other troll simply take over your keyboard and continue ?
+  N1: is your shift over soon or does some other person simply take over your keyboard and continue?
+  N2: is your shift over soon or does another individual simply take over your keyboard and continue?
+  N3: is your shift about to end or will someone else take over the keyboard and continue?
+
+Row 1331:
+  Toxic: i dont want to talk to you no more , you emptyheaded animal food trough wiper !
+  N1: I don't want to talk to you any more
+  N2: I no longer wish to converse with you
+  N3: I don't feel like talking to you anymore
+
+Row 1332:
+  Toxic: hes unsightly and beyond dumb .
+  N1: He appears unattractive
+  N2: He seems rather unappealing
+  N3: His appearance is not pleasing
+
+Row 1333:
+  Toxic: when these idiots and morons show up with no toilet paper and fill the bay with crap .
+  N1: When these people show up, they mess everywhere.
+  N2: People without toilet paper often leave a mess behind.
+  N3: Individuals arriving unprepared tend to create disorder.
+
+Row 1334:
+  Toxic: in my opinion , you are a sore loser .
+  N1: I think you are a sore loser.
+  N2: In my view, you seem like a sore loser.
+  N3: It appears to me that you act like a sore loser.
+
+Row 1336:
+  Toxic: its wrong in so many ways , its beyond ridiculous .
+  N1: It's so wrong in so many ways.
+  N2: There are numerous issues with it, making it quite absurd.
+  N3: It has multiple flaws, rendering it extremely unreasonable.
+
+Row 1337:
+  Toxic: too bad for you that you cant delete your illadvised and stupid remark .
+  N1: Too bad for you can’t delete your ill-advised and terrible remark.
+  N2: It's unfortunate you can't remove your poorly considered and inappropriate comment.
+  N3: Unfortunately, you're unable to delete your thoughtless and unsuitable remark.
+
+Row 1338:
+  Toxic: its entirely because he is a black criminal and adn refuses to list minorities who commit crimes .
+  N1: it's entirely because he is a criminal and the source refuses to list minorities who commit crimes.
+  N2: the reason is solely due to him being a criminal and the refusal to mention minorities involved in crimes.
+  N3: it's completely because he is a criminal and there's an unwillingness to include minorities in crime statistics.
+
+Row 1339:
+  Toxic: merkel is a stealth commie , arrogant , and traitor .
+  N1: Merkel is not a good person.
+  N2: Merkel displays characteristics of arrogance and betrayal.
+  N3: Merkel is perceived as being both arrogant and disloyal.
+
+Row 1340:
+  Toxic: the biggest threat to america has been unleashed and through every legal means , trump needs to be neutered .
+  N1: the biggest threat to America has been unleashed, and every legal measure should be taken to remove Trump from power.
+  N2: America faces a significant threat that has emerged, and all legal steps must be taken to ensure Trump is no longer in office.
+  N3: A major threat to the United States has surfaced, and it's imperative that all legal avenues are utilized to remove Trump.
+
+Row 1341:
+  Toxic: theres a crazy , heavilyarmed shooter at your event .
+  N1: there is a crazy, heavily armed shooter at your event.
+  N2: an individual with heavy weapons has appeared at the location of your event.
+  N3: your event is currently facing a situation where an armed and erratic person is present.
+
+Row 1342:
+  Toxic: what the hell is wrong with dlnr kauai ? !
+  N1: What's wrong with Dlnr Kauai? !
+  N2: What is wrong with dlnr kauai
+  N3: Can someone explain what's going on with Dlnr Kauai?
+
+Row 1343:
+  Toxic: and tell them the objective is to gain experience is completely asinine .
+  N1: and tell them the objective is to gain experience is completely bad.
+  N2: and inform them that the goal of gaining experience seems unreasonable.
+  N3: and let them know that the purpose of gaining experience appears unsuitable.
+
+Row 1344:
+  Toxic: the new inventory is a lot of crap .
+  N1: The new inventory is not good.
+  N2: the new inventory is a lot of error.
+  N3: The new inventory contains many issues.
+
+Row 1345:
+  Toxic: you upset me so much with your stupidity .
+  N1: You upset me so much with your actions
+  N2: Your behavior has really upset me.
+  N3: I feel very upset by what you've done.
+
+Row 1346:
+  Toxic: wtf have you done , junior ?
+  N1: what have you done, junior?
+  N2: what have you done, junior
+  N3: what did you do, junior?
+
+Row 3074:
+  Toxic: radiation tomorrow - time to start phase 21 of operation kick leukemia 's ass .
+  N1: radiation tomorrow - time to start phase 21 of operation defeat leukemia
+  N2: Radiation tomorrow - time to start phase 21 of operation to attack leukemia.
+  N3: Radiation tomorrow - time to begin phase 21 of the operation against leukemia.
+
+Row 3075:
+  Toxic: and nice hair , noremy then i 'm taking that ass to dinner .
+  N1: and nice hair, noremy then i'm taking them to dinner.
+  N2: with nice hair, noremy i'll take them out for dinner.
+  N3: i think noremy has nice hair and i'd like to take them to dinner.
+
+Row 3076:
+  Toxic: a - fucking - men , she 's so perfect looking .
+  N1: She is so perfect looking
+  N2: She's so perfect looking
+  N3: She appears to be very perfect
+
+Row 3077:
+  Toxic: i need to get away from this fuckin madness
+  N1: I need to get away from losing my mind.
+  N2: I need to get away from this madness.
+  N3: I need to escape this chaotic situation.
+
+Row 3078:
+  Toxic: love to see that fucked up look on ur face
+  N1: Love to see that intricate expression on your face.
+  N2: Love to see that concerned look on your face
+  N3: Love to see the complexity of your facial expression.
+
+Row 3080:
+  Toxic: niggas and bitches smile in your face quick .
+  N1: people smile in your face quickly.
+  N2: individuals often smile at you promptly.
+  N3: smiles appear on faces towards you swiftly.
+
+Row 3081:
+  Toxic: she 's into all this anime shit + julian casablancas
+  N1: she's into all this anime and Julian Casablancas
+  N2: she 's into all this anime plus Julian Casablancas
+  N3: she is interested in both anime and Julian Casablancas
+
+Row 3082:
+  Toxic: that 's one of the reasons i don 't like garbage rap that talks about shooting and fucking bitches
+  N1: that 's one of the reasons i don 't like rap that talks about shooting
+  N2: one reason i avoid certain types of rap is because they discuss violence
+  N3: i dislike some rap songs due to their violent themes
+
+Row 3083:
+  Toxic: word ! its the niggas you fuck with !
+  N1: Listen, it's the people you have issues with!
+  N2: word ! it's the people you interact with !
+  N3: word ! it's the individuals you associate with !
+
+Row 3084:
+  Toxic: once again my mom has fucked up my day , then she wonders why i don 't offer to babysit
+  N1: Once again my mother ruined my day and she expects me to babysit.
+  N2: My day was spoiled once more by my mom, yet she still asks me to babysit.
+  N3: My mom messed up my day again and now she wants me to take care of the kids.
+
+Row 3085:
+  Toxic: but this bitch hurt you !
+  N1: But this hurt you!
+  N2: But this caused you pain!
+  N3: But this person's actions hurt you!
+
+Row 3086:
+  Toxic: you asked for it and why the fuck did u change your bio bitch
+  N1: why did you change your bio?
+  N2: what made you decide to change your bio?
+  N3: can you explain why you changed your bio?
+
+Row 3088:
+  Toxic: ughh bring me a plate with food to my door step b4 i whoop ur ass ! mr shit talker
+  N1: Bring me a plate with food to my doorstep
+  N2: Just bring a plate of food to my doorstep
+  N3: Please deliver a plate of food to my doorstep
+
+Row 3089:
+  Toxic: dont tell me to follow back bitch isaid iwould .
+  N1: don't tell me to follow back; I said I would.
+  N2: please don't ask me to follow back, I already said I would.
+  N3: I've already stated I would, so please don't tell me to follow back.
+
+Row 3090:
+  Toxic: yea i 'm still in the wack ass field .
+  N1: Yea am still in the field
+  N2: I'm still working in that field
+  N3: I am still in the same field
+
+Row 3091:
+  Toxic: you know about santana - ai lool hes a fucking don
+  N1: You know about Santana - he's considered a tough individual.
+  N2: Santana is known for being a notorious figure.
+  N3: There's information about Santana - he's recognized as a powerful person.
+
+Row 3092:
+  Toxic: just had to get stubborn me off her lazy ass .
+  N1: just had to get stubborn me off
+  N2: Just had to get stubborn me off her
+  N3: Had to get myself off her due to my stubbornness
+
+Row 3093:
+  Toxic: no man i 'm talking this shit right here this feathered hair
+  N1: no man, i'm talking about this right here, this feathered hair
+  N2: No man, I'm talking about these things right here, this feathered hair
+  N3: No man, I'm discussing this particular thing right here, the feathered hair
+
+Row 3095:
+  Toxic: i think the whole paparazzi business is fucked up ! they need to know when to stop !
+  N1: i think the whole paparazzi business is messed up ! they need to know when to stop !
+  N2: I think the entire media business is not good! They need to know their limits.
+  N3: I believe the paparazzi industry is problematic! They should understand when to cease.
+
+Row 3097:
+  Toxic: haven 't seen you fucks yet ! ! ! !
+  N1: Have not seen you guys yet
+  N2: haven’t seen you guys yet ! ! ! !
+  N3: I haven't encountered you all yet
+
+Row 3100:
+  Toxic: day five of not working because of the 14 network being all fucked
+  N1: day five of not working because of issues with the 14 network
+  N2: day five of not working due to problems with the 14 network
+  N3: day five without work because the 14 network is having troubles
+
+Row 3103:
+  Toxic: also , made my computer hot like a bitch .
+  N1: My computer is hot
+  N2: also, made my computer extremely warm
+  N3: The heat from my computer is intense
+
+Row 3107:
+  Toxic: i 've eaten so much meat i 'll be shitting like a hippo for weeks .
+  N1: I've eaten so much I won't be leaving the toilet for weeks
+  N2: After eating so much meat, I expect to have digestive issues for weeks.
+  N3: The amount of meat I consumed means I'll likely be experiencing frequent bowel movements for weeks.
+
+Row 3108:
+  Toxic: wtf who started that " sagg " shit _ -
+  N1: Who initiated that
+  N2: Who began the 'sagg' trend?
+  N3: Can someone tell me who started the 'sagg' style?
+
+Row 3109:
+  Toxic: because i fucking miss you and because i fucking said so
+  N1: Because I miss you and I said so
+  N2: because I miss you and because I mentioned it
+  N3: Since I miss you and I stated it
+
+Row 3110:
+  Toxic: fuck it , 3 ds fund axed in favour of upping tv budget
+  N1: The 3D fund has been cut to increase the TV budget.
+  N2: The funds allocated for 3D projects have been redirected towards boosting the TV budget.
+  N3: There's been a reallocation of funds from 3D initiatives to enhance the TV budget.
+
+Row 3111:
+  Toxic: rt thank you to for that bomb ass food ! ! it was really good
+  N1: Rt thank you for that food! ! It was really good.
+  N2: Thanks for the food, it was very good.
+  N3: The food was excellent, thank you!
+
+Row 3112:
+  Toxic: shit let me in mysch then bro
+  N1: Let me in mysch then, bro.
+  N2: Let me in mysch, then bro.
+  N3: Can you let me in mysch, then bro?
+
+Row 3114:
+  Toxic: it 's fuck , slow class lol
+  N1: It's a slow class.
+  N2: It's a slow class, lol.
+  N3: The class is quite slow.
+
+Row 3115:
+  Toxic: shit instantly gets me hyped and inspired
+  N1: That thing instantly gets me hyped and inspired
+  N2: It instantly gets me hyped and inspired
+  N3: Something instantly gets me hyped and inspired
+
+... and 129 more
+
+============================================================
+FAILED ROWS (still need manual review):
+============================================================
+
+Row 4762: 21 and 21 , big ass titties
