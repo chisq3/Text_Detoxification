@@ -13,11 +13,8 @@ import re
 import time
 import pandas as pd
 
-# ==============================
 # REDIRECT CACHE TRƯỚC KHI IMPORT vllm
 # PHẢI set env vars trước khi import bất kỳ lib nào
-# ==============================
-
 CACHE_DIR = "/storage/student6/.cache"
 for d in ["vllm", "flashinfer", "huggingface", "triton"]:
     os.makedirs(f"{CACHE_DIR}/{d}", exist_ok=True)
@@ -35,9 +32,7 @@ os.environ["VLLM_LOGGING_LEVEL"]       = "WARNING"
 
 from vllm import LLM, SamplingParams
 
-# ==============================
 # CONFIG
-# ==============================
 
 # Chọn model phù hợp VRAM:
 #   bfloat16 full  → ~28GB → KHÔNG vừa 1x RTX3090 (24GB)
@@ -53,9 +48,7 @@ OUTPUT_FILE = "paradetox_filled.tsv"
 CHECKPOINT  = "checkpoint.tsv"
 BATCH_SIZE  = 20    # giảm batch size → ít validation errors hơn
 
-# ==============================
 # VALIDATION
-# ==============================
 
 def validate_results(results, expected_count, original_batch):
     """
@@ -97,10 +90,7 @@ def validate_results(results, expected_count, original_batch):
     
     return True, ""
 
-# ==============================
 # PROMPT BUILDER
-# ==============================
-
 def build_prompt(batch):
     items = []
     for item in batch:
@@ -170,9 +160,7 @@ OUTPUT (JSON array only):"""
         f"<|im_start|>assistant\n"
     )
 
-# ==============================
 # INFERENCE
-# ==============================
 
 def run_batch(batch, llm, sampling_params, max_retries=3):
     prompt = build_prompt(batch)
@@ -198,16 +186,11 @@ def run_batch(batch, llm, sampling_params, max_retries=3):
     print(f"\n  [SKIP] Batch failed after {max_retries} attempts")
     return None
 
-# ==============================
 # MAIN — bắt buộc có guard này để vllm spawn worker đúng cách
-# ==============================
 
 if __name__ == "__main__":
 
-    # ==============================
     # KIỂM TRA bitsandbytes
-    # ==============================
-
     try:
         import bitsandbytes
         print(f"✓ bitsandbytes {bitsandbytes.__version__} sẵn sàng")
@@ -216,9 +199,7 @@ if __name__ == "__main__":
         print("  pip install bitsandbytes")
         exit(1)
 
-    # ==============================
     # LOAD MODEL (4-bit bitsandbytes)
-    # ==============================
 
     print(f"Loading Qwen2.5-14B-Instruct 4-bit trên GPU 1...")
     print(f"VRAM cần: ~8GB / 24GB available")
@@ -328,23 +309,20 @@ if __name__ == "__main__":
         else:
             # Preview output của batch đầu để verify quality
             if batch_num == 0:
-                print("\n" + "=" * 60)
                 print("FIRST BATCH OUTPUT (check diversity & quality):")
-                print("=" * 60)
                 for j in range(min(2, len(results))):
                     print(f"\nItem {j}:")
                     print(f"  Toxic: {batch[j]['toxic'][:70]}")
                     print(f"  N1: {results[j]['neutral1'][:70]}")
                     print(f"  N2: {results[j]['neutral2'][:70]}")
                     print(f"  N3: {results[j]['neutral3'][:70]}")
-                print("=" * 60)
-                print("⏸  Press Ctrl+C now if output looks bad, or wait 5s to continue...")
+                print("   Press Ctrl+C now if output looks bad, or wait 5s to continue...")
                 try:
                     time.sleep(5)
                 except KeyboardInterrupt:
                     print("\n\n⚠️  Stopped by user. Checkpoint saved, you can resume later.")
                     exit(0)
-                print("▶  Continuing...\n")
+                print("   Continuing...\n")
             
             for item in results:
                 local_id = item.get("id")
@@ -417,11 +395,9 @@ if __name__ == "__main__":
         review_df = pd.DataFrame(review_data)
         review_file = "filled_review.csv"
         review_df.to_csv(review_file, index=False)
-        print(f"\n📋 Review file saved: {review_file} ({len(review_data)} items with new content)")
+        print(f"\n  Review file saved: {review_file} ({len(review_data)} items with new content)")
     
-    print(f"\n{'='*60}")
-    print(f"✓ COMPLETED!")
-    print(f"{'='*60}")
+    print(f"  COMPLETED!")
     print(f"Total time      : {total_time/60:.1f} minutes ({total_time:.0f}s)")
     print(f"Cells filled    : {filled}")
     print(f"Batch errors    : {errors} / {total_batches} ({errors/total_batches*100:.1f}%)")
@@ -429,7 +405,6 @@ if __name__ == "__main__":
     print(f"Avg time/batch  : {total_time/total_batches:.1f}s")
     print(f"Output file     : {OUTPUT_FILE}")
     print(f"Checkpoint      : {CHECKPOINT}")
-    print(f"{'='*60}")
 
     df2  = pd.read_csv(OUTPUT_FILE, sep="\t")
     missing = df2[["neutral1", "neutral2", "neutral3"]].isna().sum().sum()
@@ -444,4 +419,4 @@ if __name__ == "__main__":
     print(f"  Completion rate   : {completion:.2f}%")
     
     if missing > 0:
-        print(f"\n⚠️  Still have {missing} empty cells. Run again to retry failed batches.")
+        print(f"\n   Still have {missing} empty cells. Run again to retry failed batches.")

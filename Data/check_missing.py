@@ -22,7 +22,7 @@ print(f"Checking: {FILE}\n")
 try:
     df = pd.read_csv(FILE, sep="\t")
 except Exception as e:
-    print(f"✗ Error loading file: {e}")
+    print(f"  Error loading file: {e}")
     exit(1)
 
 print(f"Total rows: {len(df)}")
@@ -50,9 +50,7 @@ if missing_indices:
     print(f"\nFirst 20 missing indices: {missing_indices[:20]}")
     
     # Show samples
-    print("\n" + "="*60)
     print("SAMPLE MISSING ROWS:")
-    print("="*60)
     for idx in missing_indices[:5]:
         row = df.loc[idx]
         print(f"\nRow {idx}:")
@@ -61,9 +59,7 @@ if missing_indices:
         print(f"  N2: {'[MISSING]' if pd.isna(row['neutral2']) or not str(row['neutral2']).strip() else str(row['neutral2'])[:60]}")
         print(f"  N3: {'[MISSING]' if pd.isna(row['neutral3']) or not str(row['neutral3']).strip() else str(row['neutral3'])[:60]}")
     
-    print("\n" + "="*60)
     print("NEXT STEP:")
     print("  python fill_neutrals_cleanup.py")
-    print("="*60)
 else:
-    print("\n✓ All rows complete! No cleanup needed.")
+    print("\n  All rows complete! No cleanup needed.")

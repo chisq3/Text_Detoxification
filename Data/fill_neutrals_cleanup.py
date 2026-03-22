@@ -24,9 +24,7 @@ import time
 import pandas as pd
 from vllm import LLM, SamplingParams
 
-# ==============================
 # CONFIG
-# ==============================
 
 MODEL_PATH      = "Qwen/Qwen2.5-14B-Instruct"
 CACHE_DIR       = "/storage/student6/.cache"
@@ -38,10 +36,7 @@ os.environ["HF_HOME"]               = CACHE_DIR
 os.environ["TRANSFORMERS_CACHE"]    = CACHE_DIR
 os.environ["TOKENIZERS_PARALLELISM"]= "false"
 
-# ==============================
 # VALIDATION
-# ==============================
-
 def validate_item(item, orig_toxic, orig_n1, orig_n2, orig_n3):
     """Validate 1 item - relaxed validation."""
     if not isinstance(item, dict):
@@ -59,10 +54,7 @@ def validate_item(item, orig_toxic, orig_n1, orig_n2, orig_n3):
     
     return True, ""
 
-# ==============================
 # PROMPT BUILDER
-# ==============================
-
 def build_prompt_single(toxic, neutral1, neutral2, neutral3):
     """Build prompt for single item."""
     # Convert empty strings to null for JSON
@@ -106,10 +98,7 @@ OUTPUT (JSON array only):"""
         f"<|im_start|>assistant\n"
     )
 
-# ==============================
 # SINGLE ROW PROCESSOR
-# ==============================
-
 def process_single_row(llm, row_idx, toxic, n1, n2, n3, max_retries=5, max_tokens=2048):
     """Process 1 row with aggressive retry strategy."""
     
@@ -162,24 +151,18 @@ def process_single_row(llm, row_idx, toxic, n1, n2, n3, max_retries=5, max_token
     print(f"    [FAILED] Row {row_idx} failed after {max_retries} attempts")
     return None
 
-# ==============================
-# MAIN
-# ==============================
-
 if __name__ == "__main__":
     
-    print("="*60)
     print("CLEANUP SCRIPT: Fill missing neutrals")
-    print("="*60)
     
     # Check file exists
     if not os.path.exists(INPUT_FILE):
-        print(f"✗ File not found: {INPUT_FILE}")
+        print(f"  File not found: {INPUT_FILE}")
         print("  Make sure fill_neutrals_local.py has run first!")
         exit(1)
     
     # Load data
-    print(f"\n[1/5] Loading: {INPUT_FILE}")
+    print(f"\n  Loading: {INPUT_FILE}")
     df = pd.read_csv(INPUT_FILE, sep="\t")
     print(f"  Total rows: {len(df)}")
     
@@ -199,14 +182,14 @@ if __name__ == "__main__":
     fill_indices = df[df.apply(needs_fill, axis=1)].index.tolist()
     
     if not fill_indices:
-        print("\n✓ Nothing to fill! All rows complete.")
+        print("\n Nothing to fill! All rows complete.")
         exit(0)
     
-    print(f"\n[2/5] Found {len(fill_indices)} rows needing fill")
+    print(f"\n  Found {len(fill_indices)} rows needing fill")
     print(f"  Indices: {fill_indices[:10]}{'...' if len(fill_indices) > 10 else ''}")
     
     # Load model
-    print(f"\n[3/5] Loading Qwen2.5-14B-Instruct (4-bit)...")
+    print(f"\n  Loading Qwen2.5-14B-Instruct (4-bit)...")
     llm = LLM(
         model=MODEL_PATH,
         dtype="half",
@@ -223,7 +206,7 @@ if __name__ == "__main__":
     print("  Model loaded!")
     
     # Process one by one
-    print(f"\n[4/5] Processing {len(fill_indices)} rows (one at a time)...")
+    print(f"\n  Processing {len(fill_indices)} rows (one at a time)...")
     print("  Strategy: Individual retry with max_retries=5, adaptive max_tokens\n")
     
     fixed_rows = []
@@ -257,10 +240,10 @@ if __name__ == "__main__":
                 "neutral2": result["neutral2"],
                 "neutral3": result["neutral3"]
             })
-            print(f"    ✓ Fixed")
+            print(f"      Fixed")
         else:
             failed_rows.append({"row_idx": idx, "toxic": toxic})
-            print(f"    ✗ Failed")
+            print(f"      Failed")
         
         # Save checkpoint every 10 rows
         if (i + 1) % 10 == 0:
@@ -276,9 +259,7 @@ if __name__ == "__main__":
     # Generate report
     print(f"  Generating report: {REPORT_FILE}")
     with open(REPORT_FILE, "w", encoding="utf-8") as f:
-        f.write("="*60 + "\n")
         f.write("CLEANUP REPORT\n")
-        f.write("="*60 + "\n\n")
         f.write(f"Total rows attempted: {len(fill_indices)}\n")
         f.write(f"Successfully fixed:   {len(fixed_rows)}\n")
         f.write(f"Failed:               {len(failed_rows)}\n")
@@ -286,9 +267,7 @@ if __name__ == "__main__":
         f.write(f"Time elapsed:         {elapsed/60:.1f} minutes\n\n")
         
         if fixed_rows:
-            f.write("="*60 + "\n")
             f.write("FIXED ROWS:\n")
-            f.write("="*60 + "\n\n")
             for item in fixed_rows[:50]:  # First 50
                 f.write(f"Row {item['row_idx']}:\n")
                 f.write(f"  Toxic: {item['toxic']}\n")
@@ -300,24 +279,19 @@ if __name__ == "__main__":
                 f.write(f"... and {len(fixed_rows) - 50} more\n\n")
         
         if failed_rows:
-            f.write("="*60 + "\n")
             f.write("FAILED ROWS (still need manual review):\n")
-            f.write("="*60 + "\n\n")
             for item in failed_rows:
                 f.write(f"Row {item['row_idx']}: {item['toxic']}\n")
     
     # Summary
-    print("\n" + "="*60)
     print("CLEANUP COMPLETE!")
-    print("="*60)
-    print(f"✓ Fixed:   {len(fixed_rows)}/{len(fill_indices)} rows")
-    print(f"✗ Failed:  {len(failed_rows)}/{len(fill_indices)} rows")
-    print(f"⏱  Time:   {elapsed/60:.1f} minutes")
-    print(f"📝 Report: {REPORT_FILE}")
-    print("="*60)
+    print(f"  Fixed:   {len(fixed_rows)}/{len(fill_indices)} rows")
+    print(f"  Failed:  {len(failed_rows)}/{len(fill_indices)} rows")
+    print(f"   Time:   {elapsed/60:.1f} minutes")
+    print(f"  Report: {REPORT_FILE}")
     
     if failed_rows:
-        print("\n⚠️  Some rows still failed even with aggressive retry.")
+        print("\n   Some rows still failed even with aggressive retry.")
         print("   Options:")
         print("   1. Run this script again (might succeed on retry)")
         print("   2. Manually review failed_rows in report")
